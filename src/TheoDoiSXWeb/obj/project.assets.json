@@ -12225,17 +12225,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\My Datas\\Webs by netcore\\QuanLyDVIn\\src\\TheoDoiSXWeb\\TheoDoiSXWeb.csproj",
+      "projectUniqueName": "F:\\GitHub02\\QuanLyDVIn\\src\\TheoDoiSXWeb\\TheoDoiSXWeb.csproj",
       "projectName": "TheoDoiSXWeb",
-      "projectPath": "E:\\My Datas\\Webs by netcore\\QuanLyDVIn\\src\\TheoDoiSXWeb\\TheoDoiSXWeb.csproj",
+      "projectPath": "F:\\GitHub02\\QuanLyDVIn\\src\\TheoDoiSXWeb\\TheoDoiSXWeb.csproj",
       "packagesPath": "C:\\Users\\BK\\.nuget\\packages\\",
-      "outputPath": "E:\\My Datas\\Webs by netcore\\QuanLyDVIn\\src\\TheoDoiSXWeb\\obj\\",
+      "outputPath": "F:\\GitHub02\\QuanLyDVIn\\src\\TheoDoiSXWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "E:\\My Datas\\Webs by netcore\\QuanLyDVIn\\src\\NuGet.Config",
+        "F:\\GitHub02\\QuanLyDVIn\\src\\NuGet.Config",
         "C:\\Users\\BK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
