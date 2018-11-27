@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\QuanLyDVIn.TheoDoiSX.BDO\QuanLyDVIn.TheoDoiSX.BDO.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Areas\KyThuatIn\Pages\_ViewStart.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>

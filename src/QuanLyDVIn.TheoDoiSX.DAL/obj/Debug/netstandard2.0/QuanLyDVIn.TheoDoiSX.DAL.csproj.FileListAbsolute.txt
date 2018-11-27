@@ -1,0 +1,6 @@
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.DAL.deps.json
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.DAL.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.DAL.csprojAssemblyReference.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.DAL.csproj.CoreCompileInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.DAL.AssemblyInfoInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.DAL.AssemblyInfo.cs

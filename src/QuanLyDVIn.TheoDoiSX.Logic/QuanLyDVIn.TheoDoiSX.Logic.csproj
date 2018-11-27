@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuanLyDVIn.TheoDoiSX.BDO\QuanLyDVIn.TheoDoiSX.BDO.csproj" />
+    <ProjectReference Include="..\QuanLyDVIn.TheoDoiSX.DAL\QuanLyDVIn.TheoDoiSX.DAL.csproj" />
+  </ItemGroup>
+
+</Project>

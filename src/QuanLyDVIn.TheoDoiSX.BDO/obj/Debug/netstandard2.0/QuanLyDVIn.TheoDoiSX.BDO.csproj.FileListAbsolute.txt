@@ -1,0 +1,9 @@
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\bin\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.deps.json
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\bin\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\bin\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.csprojAssemblyReference.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.csproj.CoreCompileInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.AssemblyInfoInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.AssemblyInfo.cs
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.BDO\obj\Debug\netstandard2.0\QuanLyDVIn.TheoDoiSX.BDO.pdb
