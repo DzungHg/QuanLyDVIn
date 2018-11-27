@@ -15,6 +15,7 @@ namespace QuanLyDVIn.TheoDoiSX.Common
         {
             SqlConnection sql = new SqlConnection();
         }*/
+        //TODO: Làm tiếp config
         public static string CnnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;

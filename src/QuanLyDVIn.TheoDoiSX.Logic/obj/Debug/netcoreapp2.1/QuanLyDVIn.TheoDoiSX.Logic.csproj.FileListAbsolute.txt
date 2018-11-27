@@ -1,0 +1,16 @@
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.deps.json
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.BDO.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.BDO.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.csprojAssemblyReference.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.csproj.CoreCompileInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.AssemblyInfoInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.AssemblyInfo.cs
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.csproj.CopyComplete
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Logic\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.pdb

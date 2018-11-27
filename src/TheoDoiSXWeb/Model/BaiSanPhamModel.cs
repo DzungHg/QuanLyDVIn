@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NhatKyPhongIn.Common.Enums;
+using QuanLyDVIn.TheoDoiSX.Common.Enums;
 
 namespace TheoDoiSXWeb.Model
 {

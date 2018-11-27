@@ -14,7 +14,7 @@ namespace QuanLyDVIn.TheoDoiSX.DAL
 
     public class BaiSanPhamDAO : IBaiSanPhamDAO
     {
-        const string tenDB = "NhatKyPhongIn";
+        const string tenDB = "SecondConnection";
         public IEnumerable<BaiSanPhamBDO> DocTatCa()
         {
             IEnumerable<BaiSanPhamBDO> output;

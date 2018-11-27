@@ -3,3 +3,12 @@ F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netcoreapp2.1\Quan
 F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.csproj.CoreCompileInputs.cache
 F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.AssemblyInfoInputs.cache
 F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.AssemblyInfo.cs
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.BDO.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.BDO.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.csprojAssemblyReference.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.csproj.CopyComplete
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.DAL\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.pdb

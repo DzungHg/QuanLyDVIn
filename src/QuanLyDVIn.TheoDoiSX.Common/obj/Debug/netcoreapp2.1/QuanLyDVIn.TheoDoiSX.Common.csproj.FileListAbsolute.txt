@@ -1,0 +1,9 @@
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.deps.json
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.csprojAssemblyReference.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.csproj.CoreCompileInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.AssemblyInfoInputs.cache
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.AssemblyInfo.cs
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.pdb
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.dll
+F:\GitHub02\QuanLyDVIn\src\QuanLyDVIn.TheoDoiSX.Common\obj\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.pdb
