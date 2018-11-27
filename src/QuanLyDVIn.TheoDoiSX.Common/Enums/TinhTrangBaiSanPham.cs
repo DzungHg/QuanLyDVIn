@@ -1,4 +1,4 @@
-﻿namespace NhatKyPhongIn.Common.Enums
+﻿namespace QuanLyDVIn.TheoDoiSX.Common.Enums
 {
     public enum TinhTrangBaiSanPham
     {

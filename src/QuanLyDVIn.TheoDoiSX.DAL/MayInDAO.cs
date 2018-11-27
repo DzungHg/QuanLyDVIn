@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using Dapper;
 using QuanLyDVIn.TheoDoiSX.BDO;
-
-using NhatKyPhongIn.Common;
+using QuanLyDVIn.TheoDoiSX.Common;
 
 namespace QuanLyDVIn.TheoDoiSX.DAL
 {

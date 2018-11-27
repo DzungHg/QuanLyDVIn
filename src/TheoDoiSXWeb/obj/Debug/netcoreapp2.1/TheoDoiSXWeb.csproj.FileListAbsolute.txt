@@ -78,3 +78,6 @@ F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\obj\Debug\netcoreapp2.1\TheoDoiSXWeb.Vie
 F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\obj\Debug\netcoreapp2.1\TheoDoiSXWeb.csproj.CopyComplete
 F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\obj\Debug\netcoreapp2.1\TheoDoiSXWeb.dll
 F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\obj\Debug\netcoreapp2.1\TheoDoiSXWeb.pdb
+F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.dll
+F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.dll
+F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.dll
