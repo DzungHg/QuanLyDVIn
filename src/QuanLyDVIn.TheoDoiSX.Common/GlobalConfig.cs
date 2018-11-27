@@ -17,7 +17,10 @@ namespace QuanLyDVIn.TheoDoiSX.Common
         }*/
         public static string CnnString(string name)
         {
-            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            //TODO:  Hẻ
+            return "";
+          //  return ConfigurationManager.ConnectionStrings[name].ConnectionString; //cũ
+
         }
     }
 }

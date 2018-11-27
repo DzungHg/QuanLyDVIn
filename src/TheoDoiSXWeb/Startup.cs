@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +17,9 @@ namespace TheoDoiSXWeb
 {
     public class Startup
     {
+        //thêm
+        public static string ConnectionString { get; private set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -42,6 +45,8 @@ namespace TheoDoiSXWeb
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //add them de doc connection string
+            services.AddSingleton<IConfiguration>(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,7 +62,9 @@ namespace TheoDoiSXWeb
                 app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
-
+            //Con string
+            ConnectionString =  Configuration.GetConnectionString("DefaultConnection");
+            //--Tiếp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
