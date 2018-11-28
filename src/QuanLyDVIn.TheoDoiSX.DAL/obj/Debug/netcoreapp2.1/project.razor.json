@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "f:\\GitHub02\\QuanLyDVIn\\src\\QuanLyDVIn.TheoDoiSX.DAL\\QuanLyDVIn.TheoDoiSX.DAL.csproj",
+  "TargetFramework": "netcoreapp2.1",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

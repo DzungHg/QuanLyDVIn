@@ -15,10 +15,11 @@ namespace QuanLyDVIn.TheoDoiSX.Common
         {
             SqlConnection sql = new SqlConnection();
         }*/
-        //TODO: Làm tiếp config
+        //TODO: Xài config bị nul vì không đọc được Connection strings
         public static string CnnString(string name)
         {
-            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+            return "Data Source=115.79.54.225,1433\\SQL2014CAN;Database=QuanLyIn;Initial Catalog=QuanLyIn;User ID=sa;Password=Ca@sql@2017!;";
+            //return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }

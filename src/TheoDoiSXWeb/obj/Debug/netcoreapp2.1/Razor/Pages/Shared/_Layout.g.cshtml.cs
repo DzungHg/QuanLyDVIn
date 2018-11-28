@@ -59,7 +59,7 @@ using TheoDoiSXWeb.Data;
             WriteLiteral("<!DOCTYPE html>\r\n<html>\r\n");
             EndContext();
             BeginContext(25, 2254, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7b16691fed604264b953f98d66f0c193", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "246e70caae924ec8afec079527c175d6", async() => {
                 BeginContext(31, 194, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\"><!-- End Required meta tags -->\r\n    <!-- Begin SEO tag -->\r\n    <title>");
                 EndContext();
@@ -133,7 +133,7 @@ using TheoDoiSXWeb.Data;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(2281, 955, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26d006f224bd439b89cf86ab2be7ea52", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af7050a77b114cd18df9c97ad473e49c", async() => {
                 BeginContext(2287, 9, true);
                 WriteLiteral("   \r\n    ");
                 EndContext();
