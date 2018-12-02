@@ -40,13 +40,14 @@
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="vendor/highlightjs/styles/ocean.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link data-skin="default" href="stylesheets/theme.min.css">
-    <link data-skin="dark" href="stylesheets/theme-dark.min.css"><!-- END THEME STYLES -->
-    <style> body {
-        display: none;
-        background-color: #191927;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheets/theme.min.css" data-skin="default">
+    <link rel="stylesheet" href="stylesheets/theme-dark.min.css" data-skin="dark"><!-- Disable unused skin immediately -->
+    <script> var skin = localStorage.getItem('skin') || 'default';
+      var unusedLink = document.querySelector('link[data-skin]:not([data-skin="'+ skin +'"])');
+
+      unusedLink.setAttribute('rel', '');
+      unusedLink.setAttribute('disabled', true);
+    </script><!-- END THEME STYLES -->
   </head>
   <body data-spy="scroll" data-target="#nav-content" data-offset="76">
     <!-- .app -->
@@ -89,7 +90,7 @@
         </div><!-- /.top-bar -->
       </header><!-- /.app-header -->
       <!-- .app-aside -->
-      <aside class="app-aside app-aside-light">
+      <aside class="app-aside app-aside-expand-md app-aside-light">
         <!-- .aside-content -->
         <div class="aside-content">
           <!-- .aside-menu -->
@@ -148,7 +149,7 @@
               <!-- .page-title-bar -->
               <header class="page-title-bar">
                 <h1 class="page-title text-center"> Plugins </h1>
-                <p class="text-muted text-center"> Below is a list of third party components that included on Looper. </p>
+                <p class="text-muted text-center"> Lists of third party components that included in Looper package. </p>
                 <div class="input-group has-clearable">
                   <button type="button" class="close" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button> <label class="input-group-prepend" for="searchClients"><span class="input-group-text"><span class="oi oi-magnifying-glass"></span></span></label> <input type="text" class="form-control form-control-lg" data-filter=".card" placeholder="Filter plugins">
                 </div>
@@ -538,7 +539,7 @@
                         <span class="tile tile-sm bg-green mr-2">G</span> Gantt </p><button type="button" class="btn btn-reset text-muted" data-toggle="collapse" data-target="#code15" aria-expanded="false" aria-controls="code15"><i class="fa fa-code"></i></button>
                     </div>
                     <div class="collapse" id="code15">
-                      <pre><code class="bash" onclick="highlightText(this)">npm install frappe-gantt</code></pre>
+                      <pre><code class="bash" onclick="highlightText(this)">npm install frappe-gantt-v2</code></pre>
                     </div>
                     <div> A simple, interactive, modern gantt chart library for the web </div>
                   </div><!-- /.card-body -->
@@ -964,14 +965,6 @@
     <!-- BEGIN THEME JS -->
     <script src="javascript/theme.min.js"></script> <!-- END THEME JS -->
     <script>
-      $(document).on('theme:init', function()
-      {
-        // redraw masonry on toggle collapse
-        $('.collapse').on('shown.bs.collapse hidden.bs.collapse', function()
-        {
-          $('.masonry-layout').masonry();
-        });
-      });
       hljs.initHighlightingOnLoad();
 
       function highlightText(el)

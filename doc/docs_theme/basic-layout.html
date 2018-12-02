@@ -40,13 +40,14 @@
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="vendor/highlightjs/styles/ocean.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link data-skin="default" href="stylesheets/theme.min.css">
-    <link data-skin="dark" href="stylesheets/theme-dark.min.css"><!-- END THEME STYLES -->
-    <style> body {
-        display: none;
-        background-color: #191927;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheets/theme.min.css" data-skin="default">
+    <link rel="stylesheet" href="stylesheets/theme-dark.min.css" data-skin="dark"><!-- Disable unused skin immediately -->
+    <script> var skin = localStorage.getItem('skin') || 'default';
+      var unusedLink = document.querySelector('link[data-skin]:not([data-skin="'+ skin +'"])');
+
+      unusedLink.setAttribute('rel', '');
+      unusedLink.setAttribute('disabled', true);
+    </script><!-- END THEME STYLES -->
   </head>
   <body data-spy="scroll" data-target="#nav-content" data-offset="76">
     <!-- .app -->
@@ -89,7 +90,7 @@
         </div><!-- /.top-bar -->
       </header><!-- /.app-header -->
       <!-- .app-aside -->
-      <aside class="app-aside app-aside-light">
+      <aside class="app-aside app-aside-expand-md app-aside-light">
         <!-- .aside-content -->
         <div class="aside-content">
           <!-- .aside-menu -->
@@ -155,7 +156,7 @@
                 <!-- .section-block -->
                 <div class="section-block">
                   <h2 id="app" class="section-title"> App </h2>
-                  <p> The Looper layout must be wrapped into the <code>.app</code> component. </p>
+                  <p> Looper layout should be wrapped into the <code>.app</code> component. </p>
                   <pre><code class="html">&lt;!-- .app --&gt;
 &lt;div class="app"&gt;
   &lt;!-- app layout goes here --&gt;
@@ -172,7 +173,7 @@
   &lt;!-- /.app-header --&gt;
 
   &lt;!-- .app-aside --&gt;
-  &lt;aside class="app-aside app-aside-light"&gt;
+  &lt;aside class="app-aside app-aside-light app-aside-expand-md"&gt;
     &lt;!-- the app navigations goes here --&gt;
   &lt;/aside&gt;
   &lt;!-- /.app-aside --&gt;
@@ -248,13 +249,13 @@
         &lt;!-- .btn-account --&gt;
         &lt;div class="dropdown"&gt;
           &lt;button class="btn-account d-none d-md-flex" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
-            &lt;div class="user-avatar"&gt;
+            &lt;span class="user-avatar"&gt;
               &lt;img src="assets/images/avatars/profile.jpg" alt=""&gt;
-            &lt;/div&gt;
-            &lt;div class="account-summary pr-lg-4 d-none d-lg-block"&gt;
-              &lt;p class="account-name"&gt;John Doe&lt;/p&gt;
-              &lt;p class="account-description"&gt;@johndoe&lt;/p&gt;
-            &lt;/div&gt;
+            &lt;/span&gt;
+            &lt;span class="account-summary pr-lg-4 d-none d-lg-block"&gt;
+              &lt;span class="account-name"&gt;John Doe&lt;/span&gt;
+              &lt;span class="account-description"&gt;@johndoe&lt;/span&gt;
+            &lt;/span&gt;
           &lt;/button&gt;
           &lt;div class="dropdown-arrow dropdown-arrow-left"&gt;&lt;/div&gt;
           &lt;!-- .dropdown-menu --&gt;
@@ -278,23 +279,23 @@
   &lt;!-- /.top-bar --&gt;
 &lt;/header&gt;</code></pre>
                   <h2 id="aside" class="section-title"> Aside </h2>
-                  <pre><code class="html">&lt;aside class="app-aside app-aside-light"&gt;
+                  <pre><code class="html">&lt;aside class="app-aside app-aside-light app-aside-expand-md"&gt;
   &lt;!-- .aside-content --&gt;
   &lt;div class="aside-content"&gt;
     &lt;!-- .aside-header --&gt;
     &lt;header class="aside-header d-block d-md-none"&gt;
       &lt;!-- .btn-account --&gt;
       &lt;button class="btn-account" type="button" data-toggle="collapse" data-target="#dropdown-aside"&gt;
-        &lt;div class="user-avatar user-avatar-lg"&gt;
+        &lt;span class="user-avatar user-avatar-lg"&gt;
           &lt;img src="assets/images/avatars/profile.jpg" alt=""&gt;
-        &lt;/div&gt;
-        &lt;div class="account-icon"&gt;
+        &lt;/span&gt;
+        &lt;span class="account-icon"&gt;
           &lt;span class="fa fa-caret-down fa-lg"&gt;&lt;/span&gt;
-        &lt;/div&gt;
-        &lt;div class="account-summary"&gt;
-          &lt;p class="account-name"&gt;John Doe&lt;/p&gt;
-          &lt;p class="account-description"&gt;@johndoe&lt;/p&gt;
-        &lt;/div&gt;
+        &lt;/span&gt;
+        &lt;span class="account-summary"&gt;
+          &lt;span class="account-name"&gt;John Doe&lt;/span&gt;
+          &lt;span class="account-description"&gt;@johndoe&lt;/span&gt;
+        &lt;/span&gt;
       &lt;/button&gt;
       &lt;!-- /.btn-account --&gt;
 
@@ -354,12 +355,14 @@
         &lt;!-- .page-title-bar --&gt;
         &lt;header class="page-title-bar"&gt;
           &lt;!-- page title stuff goes here --&gt;
+          &lt;h1 class="page-title"&gt;Page title&lt;/h1&gt;
         &lt;/header&gt;
         &lt;!-- /.page-title-bar --&gt;
 
         &lt;!-- .page-section --&gt;
         &lt;div class="page-section"&gt;
           &lt;!-- page content goes here --&gt;
+          &lt;p&gt;Hellow world!&lt;/p&gt;
         &lt;/div&gt;
         &lt;!-- /.page-section --&gt;
       &lt;/div&gt;
@@ -392,14 +395,6 @@
     <!-- BEGIN THEME JS -->
     <script src="javascript/theme.min.js"></script> <!-- END THEME JS -->
     <script>
-      $(document).on('theme:init', function()
-      {
-        // redraw masonry on toggle collapse
-        $('.collapse').on('shown.bs.collapse hidden.bs.collapse', function()
-        {
-          $('.masonry-layout').masonry();
-        });
-      });
       hljs.initHighlightingOnLoad();
 
       function highlightText(el)

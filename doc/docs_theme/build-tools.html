@@ -40,13 +40,14 @@
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="vendor/highlightjs/styles/ocean.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link data-skin="default" href="stylesheets/theme.min.css">
-    <link data-skin="dark" href="stylesheets/theme-dark.min.css"><!-- END THEME STYLES -->
-    <style> body {
-        display: none;
-        background-color: #191927;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheets/theme.min.css" data-skin="default">
+    <link rel="stylesheet" href="stylesheets/theme-dark.min.css" data-skin="dark"><!-- Disable unused skin immediately -->
+    <script> var skin = localStorage.getItem('skin') || 'default';
+      var unusedLink = document.querySelector('link[data-skin]:not([data-skin="'+ skin +'"])');
+
+      unusedLink.setAttribute('rel', '');
+      unusedLink.setAttribute('disabled', true);
+    </script><!-- END THEME STYLES -->
   </head>
   <body data-spy="scroll" data-target="#nav-content" data-offset="76">
     <!-- .app -->
@@ -89,7 +90,7 @@
         </div><!-- /.top-bar -->
       </header><!-- /.app-header -->
       <!-- .app-aside -->
-      <aside class="app-aside app-aside-light">
+      <aside class="app-aside app-aside-expand-md app-aside-light">
         <!-- .aside-content -->
         <div class="aside-content">
           <!-- .aside-menu -->
@@ -217,6 +218,15 @@
                       </tbody>
                     </table>
                   </div>
+                  <div class="alert alert-secondary has-icon mb-4">
+                    <div class="alert-icon">
+                      <span class="fa fa-bullhorn"></span>
+                    </div>
+                    <p>
+                      <strong>Heads up!</strong> We used Liquid Markup to generate html templates with simple logic and load dynamic content in build process. So we can separate our templates into small parts, making it easier to maintenance. Please see the <a class="alert-link" href="https://shopify.github.io/liquid/" target="_blank">Liquid Markup site</a> to see what you can do with it. </p>
+                    <p> We also used <a class="alert-link" href="https://www.npmjs.com/package/front-matter" target="_blank">FrontMatter</a> in build process to handle our meta-data from html document and our dummy data from <code>.json</code> file. </p>
+                    <p> This work like a static site generator. If you've heard about Jekyll, then you will know that we adopt a similar technology. </p>
+                  </div>
                 </div><!-- /.section-block -->
               </div><!-- /.page-section -->
             </div><!-- /.page-inner -->
@@ -239,14 +249,6 @@
     <!-- BEGIN THEME JS -->
     <script src="javascript/theme.min.js"></script> <!-- END THEME JS -->
     <script>
-      $(document).on('theme:init', function()
-      {
-        // redraw masonry on toggle collapse
-        $('.collapse').on('shown.bs.collapse hidden.bs.collapse', function()
-        {
-          $('.masonry-layout').masonry();
-        });
-      });
       hljs.initHighlightingOnLoad();
 
       function highlightText(el)

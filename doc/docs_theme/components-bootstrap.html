@@ -40,13 +40,14 @@
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="vendor/highlightjs/styles/ocean.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link data-skin="default" href="stylesheets/theme.min.css">
-    <link data-skin="dark" href="stylesheets/theme-dark.min.css"><!-- END THEME STYLES -->
-    <style> body {
-        display: none;
-        background-color: #191927;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheets/theme.min.css" data-skin="default">
+    <link rel="stylesheet" href="stylesheets/theme-dark.min.css" data-skin="dark"><!-- Disable unused skin immediately -->
+    <script> var skin = localStorage.getItem('skin') || 'default';
+      var unusedLink = document.querySelector('link[data-skin]:not([data-skin="'+ skin +'"])');
+
+      unusedLink.setAttribute('rel', '');
+      unusedLink.setAttribute('disabled', true);
+    </script><!-- END THEME STYLES -->
   </head>
   <body data-spy="scroll" data-target="#nav-content" data-offset="76">
     <!-- .app -->
@@ -89,7 +90,7 @@
         </div><!-- /.top-bar -->
       </header><!-- /.app-header -->
       <!-- .app-aside -->
-      <aside class="app-aside app-aside-light">
+      <aside class="app-aside app-aside-expand-md app-aside-light">
         <!-- .aside-content -->
         <div class="aside-content">
           <!-- .aside-menu -->
@@ -655,6 +656,10 @@
                           <code>.modal-drawer-left</code>
                         </dt>
                         <dd class="col-8"> Apply to <code>.modal-dialog</code> to put <code>.modal-drawer</code> on the left position. </dd>
+                        <dt class="col-4">
+                          <code>.modal-docked</code>
+                        </dt>
+                        <dd class="col-8"> Apply to <code>.modal</code> to put <code>.modal</code> on the bottom left position (like chat widget). </dd>
                       </dl>
                     </div>
                   </section><!-- /.card -->
@@ -971,14 +976,6 @@
     <!-- BEGIN THEME JS -->
     <script src="javascript/theme.min.js"></script> <!-- END THEME JS -->
     <script>
-      $(document).on('theme:init', function()
-      {
-        // redraw masonry on toggle collapse
-        $('.collapse').on('shown.bs.collapse hidden.bs.collapse', function()
-        {
-          $('.masonry-layout').masonry();
-        });
-      });
       hljs.initHighlightingOnLoad();
 
       function highlightText(el)

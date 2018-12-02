@@ -40,13 +40,14 @@
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="vendor/highlightjs/styles/ocean.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link data-skin="default" href="stylesheets/theme.min.css">
-    <link data-skin="dark" href="stylesheets/theme-dark.min.css"><!-- END THEME STYLES -->
-    <style> body {
-        display: none;
-        background-color: #191927;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheets/theme.min.css" data-skin="default">
+    <link rel="stylesheet" href="stylesheets/theme-dark.min.css" data-skin="dark"><!-- Disable unused skin immediately -->
+    <script> var skin = localStorage.getItem('skin') || 'default';
+      var unusedLink = document.querySelector('link[data-skin]:not([data-skin="'+ skin +'"])');
+
+      unusedLink.setAttribute('rel', '');
+      unusedLink.setAttribute('disabled', true);
+    </script><!-- END THEME STYLES -->
   </head>
   <body data-spy="scroll" data-target="#nav-content" data-offset="76">
     <!-- .app -->
@@ -89,7 +90,7 @@
         </div><!-- /.top-bar -->
       </header><!-- /.app-header -->
       <!-- .app-aside -->
-      <aside class="app-aside app-aside-light">
+      <aside class="app-aside app-aside-expand-md app-aside-light">
         <!-- .aside-content -->
         <div class="aside-content">
           <!-- .aside-menu -->
@@ -144,7 +145,7 @@
           <!-- .page -->
           <div class="page">
             <!-- .page-inner -->
-            <div class="page-inner">
+            <div class="page-inner container">
               <!-- .page-title-bar -->
               <header class="page-title-bar">
                 <h1 class="page-title"> Theming </h1>
@@ -175,7 +176,7 @@
                   <h2 class="section-title"> Bootstrap </h2>
                   <p> This folder is where custom bootstrap styles lives. With some effort, you can modify the look of Bootstrap components by override Bootstrap variables using <code>_variable-custom.scss</code> file. If you want to go deeper, you can use our <code>custom.scss</code> file to write your own styles. </p>
                   <h2 class="section-title"> Components </h2>
-                  <p> The components directory contains all new components that included in Looper. Each components separated in their own files in this directory. You can edit the look of each components by override looper components variables using <code>_variable-custom.scss</code> file. If you want to go deeper, you can use our <code>custom.scss</code> file to write your own styles. </p>
+                  <p> The components directory contains all new components that included in Looper. Each components separated in their own files in this directory. You can edit the look of each components by override looper components variables using <code>_variable-custom.scss</code> file, as well as <code>custom.scss</code> if you want to write your own styles. </p>
                 </div><!-- /.section-block -->
               </div><!-- /.page-section -->
             </div><!-- /.page-inner -->
@@ -192,14 +193,6 @@
     <!-- BEGIN THEME JS -->
     <script src="javascript/theme.min.js"></script> <!-- END THEME JS -->
     <script>
-      $(document).on('theme:init', function()
-      {
-        // redraw masonry on toggle collapse
-        $('.collapse').on('shown.bs.collapse hidden.bs.collapse', function()
-        {
-          $('.masonry-layout').masonry();
-        });
-      });
       hljs.initHighlightingOnLoad();
 
       function highlightText(el)

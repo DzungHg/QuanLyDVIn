@@ -89,8 +89,7 @@ function () {
         end: '2018-11-12',
         name: 'Deploy',
         id: 'Task 4',
-        progress: 0,
-        dependencies: 'Task 2'
+        progress: 0
       }, {
         start: '2018-11-13',
         end: '2018-11-13',

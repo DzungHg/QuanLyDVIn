@@ -14,7 +14,6 @@ function () {
   function BoardDemo() {
     _classCallCheck(this, BoardDemo);
 
-    this.ntTodoIncrement = 1;
     this.ntTodos = [{
       id: 0,
       desc: 'Eat corn on the cob',
@@ -161,7 +160,7 @@ function () {
         }
       }).on('keyup', '#ntTodosInpt', function (e) {
         var todo = {
-          id: self.ntTodoIncrement,
+          id: self.ntTodos.length,
           desc: $(this).val(),
           checked: false // on enter
 
@@ -173,7 +172,7 @@ function () {
         }
       }).on('click', '#ntTodosAdd', function () {
         self.addNtTodo({
-          id: self.ntTodoIncrement,
+          id: self.ntTodos.length,
           desc: $('#ntTodosInpt').val(),
           checked: false
         });
@@ -231,13 +230,12 @@ function () {
       this.getNtTodosMeter();
       var tmpl = "<div class=\"todo\">\n      <div class=\"custom-control custom-checkbox\">\n        <input type=\"checkbox\" class=\"custom-control-input\" id=\"todo".concat(todo.id, "\" value=\"").concat(todo.id, "\">\n        <label class=\"custom-control-label\" for=\"todo").concat(todo.id, "\">").concat(todo.desc, "</label>\n      </div>\n      <div class=\"todo-actions pr-1\">\n        <button type=\"button\" class=\"btn btn-sm btn-light\" onclick=\"boardDemo.removeNtTodo(").concat(todo.id, ")\">Delete</button>\n      </div>\n    </div>");
       $('#ntTodos').append(tmpl);
-      this.ntTodoIncrement++;
     }
   }, {
     key: "removeNtTodo",
     value: function removeNtTodo(id) {
       // remove todo from todos
-      this.ntTodos.filter(function (todo) {
+      this.ntTodos = this.ntTodos.filter(function (todo) {
         return todo.id !== id;
       }); // save todos to todos input
 
@@ -275,5 +273,5 @@ function () {
 
 
 $(document).on('theme:init', function () {
-  new BoardDemo();
+  window.boardDemo = new BoardDemo();
 });

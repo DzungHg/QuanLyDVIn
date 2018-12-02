@@ -84,3 +84,5 @@ F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoD
 F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Common.pdb
 F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.Logic.pdb
 F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\bin\Debug\netcoreapp2.1\QuanLyDVIn.TheoDoiSX.DAL.pdb
+F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\obj\Debug\netcoreapp2.1\Razor\Pages\Shared\_HeaderPartial.g.cshtml.cs
+F:\GitHub02\QuanLyDVIn\src\TheoDoiSXWeb\obj\Debug\netcoreapp2.1\Razor\Pages\Shared\_AsidePartial.g.cshtml.cs

@@ -40,13 +40,14 @@
     <link rel="stylesheet" href="vendor/fontawesome/css/all.css">
     <link rel="stylesheet" href="vendor/highlightjs/styles/ocean.css"><!-- END PLUGINS STYLES -->
     <!-- BEGIN THEME STYLES -->
-    <link data-skin="default" href="stylesheets/theme.min.css">
-    <link data-skin="dark" href="stylesheets/theme-dark.min.css"><!-- END THEME STYLES -->
-    <style> body {
-        display: none;
-        background-color: #191927;
-      }
-    </style>
+    <link rel="stylesheet" href="stylesheets/theme.min.css" data-skin="default">
+    <link rel="stylesheet" href="stylesheets/theme-dark.min.css" data-skin="dark"><!-- Disable unused skin immediately -->
+    <script> var skin = localStorage.getItem('skin') || 'default';
+      var unusedLink = document.querySelector('link[data-skin]:not([data-skin="'+ skin +'"])');
+
+      unusedLink.setAttribute('rel', '');
+      unusedLink.setAttribute('disabled', true);
+    </script><!-- END THEME STYLES -->
   </head>
   <body data-spy="scroll" data-target="#nav-content" data-offset="76">
     <!-- .app -->
@@ -89,7 +90,7 @@
         </div><!-- /.top-bar -->
       </header><!-- /.app-header -->
       <!-- .app-aside -->
-      <aside class="app-aside app-aside-light">
+      <aside class="app-aside app-aside-expand-md app-aside-light">
         <!-- .aside-content -->
         <div class="aside-content">
           <!-- .aside-menu -->
@@ -144,7 +145,7 @@
           <!-- .page -->
           <div class="page">
             <!-- .page-inner -->
-            <div class="page-inner">
+            <div class="page-inner container">
               <!-- .page-title-bar -->
               <header class="page-title-bar">
                 <h1 class="page-title"> Support and contribution </h1>
@@ -154,7 +155,7 @@
                 <!-- .section-block -->
                 <div class="section-block">
                   <p> After you make a purchase you will get a free update forever. So let yourself be involved in development. Please let me know though our support form if you have any questions, found bugs, requests new features / pages or something else. I'm here to help you in any way I can. Just fill our support form through your account, please go to <strong>Purchases</strong> &gt; Click the <strong>Order #</strong> &gt; <strong>Get Support</strong>, I'll get back to you shortly. </p>
-                  <p> If you feel Looper is useful to you, please give your best words in the <a href="https://themes.getbootstrap.com/product/looper-responsive-admin-template/">Review page</a>. It is very helpful for future development. </p>
+                  <p> If you feel Looper is useful for you, please give your best words in the <a href="https://themes.getbootstrap.com/product/looper-responsive-admin-template/">Review page</a>. It is very helpful for future development. </p>
                   <blockquote>
                     <p class="mb-0"> Hope you enjoy and Thank-you for your interest in Looper Theme </p>
                     <footer> Beni Arisandi </footer>
@@ -175,14 +176,6 @@
     <!-- BEGIN THEME JS -->
     <script src="javascript/theme.min.js"></script> <!-- END THEME JS -->
     <script>
-      $(document).on('theme:init', function()
-      {
-        // redraw masonry on toggle collapse
-        $('.collapse').on('shown.bs.collapse hidden.bs.collapse', function()
-        {
-          $('.masonry-layout').masonry();
-        });
-      });
       hljs.initHighlightingOnLoad();
 
       function highlightText(el)

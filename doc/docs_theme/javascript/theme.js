@@ -45,10 +45,10 @@ function () {
     };
     this.skins = ['default', 'dark']; // current skin
 
-    this.skin = localStorage.skin ? localStorage.skin : 'default'; // handle resources
+    this.skin = localStorage.getItem('skin') || 'default'; // initialized
 
     $(document).ready(function () {
-      _this.performSkin();
+      _this.init();
     });
   }
 
@@ -58,7 +58,7 @@ function () {
       // handle polyfill
       // =============================================================
       this.placeholderShown();
-      this.osFlagging(); // handle bootstrap components
+      this.objectFitFallback(); // handle bootstrap components
       // =============================================================
 
       this.tooltips();
@@ -82,7 +82,7 @@ function () {
       // =============================================================
 
 
-      this.backdrop();
+      this.asideBackdrop();
       this.aside();
       this.asideMenu();
       this.sidebar();
@@ -120,36 +120,13 @@ function () {
       // =============================================================
 
       this.eventProps();
-      this.windowResize(); // trigger the document
+      this.watchMQ(); // utilities
+      // =============================================================
+
+      this.browserFlagging();
+      this.osFlagging(); // trigger the document
 
       $(document).trigger('theme:init', this);
-    } // Resources
-    // =============================================================
-
-    /**
-     * Activate current skin
-     * then init all methods when it ready
-     */
-
-  }, {
-    key: "performSkin",
-    value: function performSkin() {
-      var _this2 = this;
-
-      var skin = this.skin;
-      var skinLink = $("link[data-skin='".concat(skin, "']"));
-      $('link[data-skin]').removeAttr('rel');
-      skinLink.attr('rel', 'stylesheet') // as we have `display: none` in the body
-      // we should wait until skin resource loaded then show our content
-      .on('load', function () {
-        // show our content
-        $('body').fadeIn(1000, function () {
-          $(this).addClass('is-loaded');
-        }); // initialize all methods after the skin ready
-        // to avoid lack of components & plugins styles
-
-        _this2.init();
-      });
     } // Polifyll
     // =============================================================
 
@@ -174,9 +151,47 @@ function () {
   }, {
     key: "placeholderShown",
     value: function placeholderShown() {
-      $(document).on('load keyup change', '[placeholder]', function () {
+      $(document).on('focus blur keyup change', '.form-label-group > input', function () {
         this.classList[this.value ? 'remove' : 'add']('placeholder-shown');
-      });
+      }); // fire .placeholder-shown for IE
+
+      $('.form-label-group > input').trigger('change');
+    }
+    /**
+     * object-fit fallbaack for ie and edge
+     */
+
+  }, {
+    key: "objectFitFallback",
+    value: function objectFitFallback() {
+      if (this.isIE() || this.isEdge()) {
+        var selectors = ['.user-avatar img', '.tile > img', '.figure-attachment > img', '.page-cover > .cover-img', '.list-group-item-figure > img'];
+        $(selectors.toString()).each(function () {
+          var $img = $(this);
+          var url = $img.prop('src');
+          var $container = $img.parent(); // .user-avatar with dropdown has deep markup
+
+          if ($container.is('[data-toggle="dropdown"]')) {
+            $container = $container.parent();
+          }
+
+          if (url) {
+            // copy img url then put as container bg
+            $container.css({
+              backgroundImage: "url(".concat(url, ")"),
+              backgroundSize: 'cover',
+              backgroundPosition: 'center center'
+            });
+
+            if ($container.hasClass('user-avatar') || $container.hasClass('user-avatar')) {
+              $container.css('background-position', 'top center');
+            } // hide the image
+
+
+            $img.css('opacity', 0);
+          }
+        });
+      }
     } // Bootstrap Components
     // =============================================================
 
@@ -437,7 +452,7 @@ function () {
         this.invertGrays();
       }
 
-      localStorage.skin = skin;
+      localStorage.setItem('skin', skin);
       this.skin = skin;
     }
     /**
@@ -447,7 +462,7 @@ function () {
   }, {
     key: "invertGrays",
     value: function invertGrays() {
-      var _this3 = this;
+      var _this2 = this;
 
       var self = this;
       var gray = this.getColors('gray'); // get gray colors in array that reserve it
@@ -455,40 +470,40 @@ function () {
       var reverseGray = this.objToArray(gray).reverse();
       var x = 0;
       $.each(gray, function (i, v) {
-        _this3.colors.gray[i] = reverseGray[x];
+        _this2.colors.gray[i] = reverseGray[x];
         x++;
       });
     } // Theme Layout
     // =============================================================
 
     /**
-     * Append app-backdrop to .app
+     * Append aside-backdrop to .app
      */
 
   }, {
-    key: "backdrop",
-    value: function backdrop() {
-      $('.app').append('<div class="app-backdrop"/>');
+    key: "asideBackdrop",
+    value: function asideBackdrop() {
+      $('.app').append('<div class="aside-backdrop"/>');
     }
     /**
-     * Showing app-backdrop
+     * Showing aside-backdrop
      */
 
   }, {
-    key: "showBackdrop",
-    value: function showBackdrop() {
-      $('.app-backdrop').addClass('show');
-      return $('.app-backdrop');
+    key: "showAsideBackdrop",
+    value: function showAsideBackdrop() {
+      $('.aside-backdrop').addClass('show');
+      return $('.aside-backdrop');
     }
     /**
-     * Hiding app-backdrop
+     * Hiding aside-backdrop
      */
 
   }, {
-    key: "hideBackdrop",
-    value: function hideBackdrop() {
-      $('.app-backdrop').removeClass('show');
-      return $('.app-backdrop');
+    key: "hideAsideBackdrop",
+    value: function hideAsideBackdrop() {
+      $('.aside-backdrop').removeClass('show');
+      return $('.aside-backdrop');
     }
     /**
      * Show aside
@@ -497,16 +512,16 @@ function () {
   }, {
     key: "showAside",
     value: function showAside() {
-      var _this4 = this;
+      var _this3 = this;
 
-      // show app-backdrop
-      var backdrop = this.showBackdrop(); // add .show class to aside
+      // show aside-backdrop
+      var backdrop = this.showAsideBackdrop(); // add .show class to aside
 
       $('.app-aside').addClass('show'); // add .active state to trigger button
 
       $('[data-toggle="aside"]').addClass('active');
       backdrop.one('click', function () {
-        _this4.hideAside();
+        _this3.hideAside();
       });
     }
     /**
@@ -516,8 +531,8 @@ function () {
   }, {
     key: "hideAside",
     value: function hideAside() {
-      // hide app-backdrop
-      this.hideBackdrop(); // remove .show class to aside
+      // hide aside-backdrop
+      this.hideAsideBackdrop(); // remove .show class to aside
 
       $('.app-aside').removeClass('show'); // remove .active state to trigger button
 
@@ -530,13 +545,13 @@ function () {
   }, {
     key: "aside",
     value: function aside() {
-      var _this5 = this;
+      var _this4 = this;
 
       var $trigger = $('[data-toggle="aside"]');
       $trigger.on('click', function () {
         var isShown = $('.app-aside').hasClass('show');
-        $trigger.toggleClass('has-active', !isShown);
-        if (isShown) _this5.hideAside();else _this5.showAside();
+        $trigger.toggleClass('active', !isShown);
+        if (isShown) _this4.hideAside();else _this4.showAside();
       });
     }
     /**
@@ -548,7 +563,7 @@ function () {
     value: function asideMenu() {
       var ps;
 
-      if (window.StackedMenu && $('#stacked-menu').length) {
+      if (window.StackedMenu && this.isExists('#stacked-menu')) {
         this.asideMenu = new StackedMenu(); // update perfect scrollbar
 
         $(this.asideMenu.selector).on('menu:open menu:close', function () {
@@ -556,14 +571,13 @@ function () {
           setTimeout(function () {
             ps.update();
           }, 300);
-        });
-      } // perfect scrollbar for aside menu
+        }); // perfect scrollbar for aside menu
 
-
-      if (window.PerfectScrollbar) {
-        ps = new PerfectScrollbar('.aside-menu', {
-          suppressScrollX: true
-        });
+        if (window.PerfectScrollbar) {
+          ps = new PerfectScrollbar('.aside-menu', {
+            suppressScrollX: true
+          });
+        }
       }
     }
     /**
@@ -606,9 +620,9 @@ function () {
       var $target = $('.has-sidebar');
       var isOpen = $target.hasClass('has-sidebar-open');
 
-      if ($target.length && isOpen) {
+      if (this.isExists('.has-sidebar') && isOpen) {
         this.hideSidebar(relatedTarget);
-      } else if ($target.length && !isOpen) {
+      } else if (this.isExists('.has-sidebar') && !isOpen) {
         this.showSidebar(relatedTarget);
       }
     }
@@ -620,7 +634,7 @@ function () {
     key: "sidebarBackdrop",
     value: function sidebarBackdrop() {
       // append backdrop only when .page has .sidebar component
-      if ($('.has-sidebar').length) {
+      if (this.isExists('.has-sidebar')) {
         $('.page').prepend('<div class="sidebar-backdrop" />');
       }
     }
@@ -810,7 +824,7 @@ function () {
     key: "perfectScrollbar",
     value: function perfectScrollbar() {
       // initialization for any components
-      if (window.PerfectScrollbar && $('.perfect-scrollbar').length) {
+      if (window.PerfectScrollbar && this.isExists('.perfect-scrollbar')) {
         $('.perfect-scrollbar:not(".aside-menu")').each(function () {
           new PerfectScrollbar(this, {
             suppressScrollX: true
@@ -1380,14 +1394,14 @@ function () {
      */
 
   }, {
-    key: "windowResize",
-    value: function windowResize() {
-      var _this6 = this;
+    key: "watchMQ",
+    value: function watchMQ() {
+      var _this5 = this;
 
       $(window).on('resize', function () {
         // force close aside on toggle screen up
-        if (_this6.isToggleScreenUp() && $('.app-aside').hasClass('has-open') && !$('.app').hasClass('has-fullwidth')) {
-          _this6.closeAside();
+        if (_this5.isToggleScreenUp() && $('.app-aside').hasClass('has-open') && !$('.app').hasClass('has-fullwidth')) {
+          _this5.closeAside();
         } // disable transition temporarily
 
 
@@ -1399,6 +1413,117 @@ function () {
     } // Utilities
     // =============================================================
 
+    /**
+     * Opera 8.0+
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "isOpera",
+    value: function isOpera() {
+      return !!window.opr && !!opr.addons || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    }
+    /**
+     * Firefox 1.0+
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "isFirefox",
+    value: function isFirefox() {
+      return typeof InstallTrigger !== 'undefined';
+    }
+    /**
+     * Safari 3.0+ "[object HTMLElementConstructor]"
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "isSafari",
+    value: function isSafari() {
+      // Safari 3.0+ "[object HTMLElementConstructor]"
+      return /constructor/i.test(window.HTMLElement) || function (p) {
+        return p.toString() === '[object SafariRemoteNotification]';
+      }(!window['safari'] || typeof safari !== 'undefined' && safari.pushNotification);
+    }
+    /**
+     * Internet Explorer 6-11
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "isIE",
+    value: function isIE() {
+      return (
+        /*@cc_on!@*/
+        false || !!document.documentMode
+      );
+    }
+    /**
+     * Edge 20+
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "isEdge",
+    value: function isEdge() {
+      return !this.isIE() && !!window.StyleMedia;
+    }
+    /**
+     * Chrome 1+
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "isChrome",
+    value: function isChrome() {
+      return !!window.chrome && !!window.chrome.webstore;
+    }
+    /**
+     * Blink engine detection
+     * @return {Boolean}
+     */
+
+  }, {
+    key: "isBlink",
+    value: function isBlink() {
+      return (this.isChrome() || this.isOpera()) && !!window.CSS;
+    }
+    /**
+     * Add class to body by browser name
+     */
+
+  }, {
+    key: "browserFlagging",
+    value: function browserFlagging() {
+      if (this.isOpera()) {
+        $('body').addClass('opera');
+      }
+
+      if (this.isFirefox()) {
+        $('body').addClass('firefox');
+      }
+
+      if (this.isSafari()) {
+        $('body').addClass('safari');
+      }
+
+      if (this.isIE()) {
+        $('body').addClass('ie');
+      }
+
+      if (this.isEdge()) {
+        $('body').addClass('edge');
+      }
+
+      if (this.isChrome()) {
+        $('body').addClass('chrome');
+      }
+
+      if (this.isBlink()) {
+        $('body').addClass('blink');
+      }
+    }
     /**
      * We used diferent font-family between mac and other os
      * so we need to flaggin it to avoid unconsistent line-height
@@ -1431,6 +1556,15 @@ function () {
     key: "isToggleScreenDown",
     value: function isToggleScreenDown() {
       return window.matchMedia('(max-width: 767.98px)').matches;
+    }
+    /**
+     * Check the existence of an element
+     */
+
+  }, {
+    key: "isExists",
+    value: function isExists(selector) {
+      return $(selector).length > 0;
     }
     /**
      * Convert rgb color to hex
