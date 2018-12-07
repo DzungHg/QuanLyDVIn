@@ -7,7 +7,6 @@ namespace QuanLyDVIn.TheoDoiSX.BDO
     public class TrungTamChiPhiBDO
     {
         public string Ma { get; set; }
-
         public string Ten { get; set; }
         public string DienGiai { get; set; }
         public int ThuTuTienTrinh { get; set; }
