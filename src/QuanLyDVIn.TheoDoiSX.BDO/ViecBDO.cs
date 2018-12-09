@@ -4,11 +4,9 @@ using System.Text;
 
 namespace QuanLyDVIn.TheoDoiSX.BDO
 {
-    public class Viec
+    public class ViecBDO
     {
-        public int Id { get; set; }
-
-
+        public int Id { get; set; }       
         public string Ten { get; set; }
         public string DienGiai { get; set; }
         public string QuyCach { get; set; }
@@ -19,6 +17,7 @@ namespace QuanLyDVIn.TheoDoiSX.BDO
         public int SoLuong { get; set; }
         public string DonViSoLuong { get; set; }
         public string MaLoaiViec { get; set; }
+        public int IdNgoai { get; set; }
         public int TinhTrang { get; set; }
     }
 }

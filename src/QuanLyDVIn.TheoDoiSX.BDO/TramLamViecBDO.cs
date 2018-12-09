@@ -13,6 +13,6 @@ namespace QuanLyDVIn.TheoDoiSX.BDO
         public string MaLoaiViec { get; set; }
         public string ThuTu { get; set; }
         public string MaTrungTamChiPhi { get; set; }
-        public int IdNguoiDung { get; set; }
+        public int IdNguoiPhuTrach { get; set; }
     }
 }
