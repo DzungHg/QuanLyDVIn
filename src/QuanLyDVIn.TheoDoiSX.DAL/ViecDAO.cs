@@ -44,6 +44,15 @@ namespace QuanLyDVIn.TheoDoiSX.DAL
                 return output;
             }
         }
+        public IEnumerable<ViecBDO> DocTheoGiaiDoan(int giaiDoan)
+        {
+            IEnumerable<ViecBDO> output;
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(tenDB)))
+            {
+                output = connection.Query<ViecBDO>("dbo.spViec_DocTheoGiaiDoan", giaiDoan);
+                return output;
+            }
+        }
 
         public void Sua(ViecBDO entityBDO)
         {
@@ -63,6 +72,7 @@ namespace QuanLyDVIn.TheoDoiSX.DAL
                 p.Add("@DonViSoLuong", entityBDO.DonViSoLuong);
                 p.Add("@MaLoaiViec", entityBDO.MaLoaiViec);
                 p.Add("@IdNgoai", entityBDO.IdNgoai);
+                p.Add("@GiaiDoan", entityBDO.GiaiDoan);
                 p.Add("@TinhTrang", entityBDO.TinhTrang);
                
 
@@ -90,6 +100,7 @@ namespace QuanLyDVIn.TheoDoiSX.DAL
                 p.Add("@DonViSoLuong", entityBDO.DonViSoLuong);
                 p.Add("@MaLoaiViec", entityBDO.MaLoaiViec);
                 p.Add("@IdNgoai", entityBDO.IdNgoai);
+                p.Add("@GiaiDoan", entityBDO.GiaiDoan);
                 p.Add("@TinhTrang", entityBDO.TinhTrang);
 
                 p.Add("@id", dbType: DbType.Int32, direction: ParameterDirection.Output);

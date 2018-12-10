@@ -12,6 +12,7 @@ namespace QuanLyDVIn.TheoDoiSX.DAL
 
         IEnumerable<ViecBDO> DocTatCa();
         IEnumerable<ViecBDO> DocTheoTinhTrang(int tinhTrang);
+        IEnumerable<ViecBDO> DocTheoGiaiDoan(int giaiDoan);
         ViecBDO DocTheoId(int id);
         void Them(ViecBDO entityBDO);
         void Sua(ViecBDO entityBDO);

@@ -19,6 +19,10 @@ namespace QuanLyDVIn.TheoDoiSX.Logic
         {
             return dataDAO.DocTheoTinhTrang(tinhTrang).ToList();
         }
+        public List<ViecBDO> DocTheoGiaiDoan(int giaiDoan)
+        {
+            return dataDAO.DocTheoGiaiDoan(giaiDoan).ToList();
+        }
         public ViecBDO DocTheoId(int idViec)
         {
             return dataDAO.DocTheoId(idViec);

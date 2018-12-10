@@ -18,6 +18,7 @@ namespace QuanLyDVIn.TheoDoiSX.BDO
         public string DonViSoLuong { get; set; }
         public string MaLoaiViec { get; set; }
         public int IdNgoai { get; set; }
+        public int GiaiDoan { get; set; }
         public int TinhTrang { get; set; }
     }
 }
